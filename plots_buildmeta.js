@@ -13,8 +13,8 @@ function init() {
 })}
 
 function optionChanged(newSample) {
-  // buildMetadata(newSample);
-  // buildCharts(newSample);
+  buildMetadata(newSample);
+  buildCharts(newSample);
   console.log(newSample);
 }
 
@@ -26,7 +26,13 @@ function buildMetadata(sample) {
     var PANEL = d3.select("#sample-metadata");
 
     PANEL.html("");
-    PANEL.append("h6").text(result.location);
+    PANEL.append("h6").text("ID: " + result.id);
+    PANEL.append("h6").text("ETHNICITY: " + result.ethnicity);
+    PANEL.append("h6").text("GENDER: " + result.gender);
+    PANEL.append("h6").text("AGE: " + result.age);
+    PANEL.append("h6").text("LOCATION: " + result.location);
+    PANEL.append("h6").text("BBType: " + result.bbtype);
+    PANEL.append("h6").text("WFREQ: " + result.wfreq);
   });
 }
 
